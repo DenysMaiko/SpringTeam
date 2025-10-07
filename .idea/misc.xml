@@ -6,6 +6,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Labs/Laboratory Work 1/MySpringWebHelloWorld/pom.xml" />
+        <option value="$PROJECT_DIR$/Labs/Laboratory Work 1/MySpringConsoleHelloWorld/pom.xml" />
       </list>
     </option>
   </component>

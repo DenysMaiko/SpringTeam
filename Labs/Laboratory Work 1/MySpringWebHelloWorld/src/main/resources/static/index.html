@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpringTeam - Головна</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Стиль для контейнера, що центрує контент */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        /* Стиль для головного банера */
+        .banner {
+            background: linear-gradient(45deg, #2a6f97, #014f86);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .banner h1 {
+            margin: 0;
+            font-size: 4rem;
+            font-weight: 700;
+        }
+
+        .team-section {
+            margin-top: 40px;
+        }
+
+        .team-section h2 {
+            font-size: 2rem;
+            color: #013a63;
+            margin-bottom: 30px;
+        }
+
+        /* Контейнер для посилань на учасників */
+        .team-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Стиль для карток-посилань */
+        .member-link {
+            display: block;
+            background-color: white;
+            padding: 25px 50px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: #014f86;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .member-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="banner">
+        <h1>SpringTeam</h1>
+    </header>
+
+    <main class="team-section">
+        <h2>Наша Команда</h2>
+        <div class="team-links">
+            <a href="/Denys.html" class="member-link">Денис</a>
+            <a href="/Artem.html" class="member-link">Артем</a>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

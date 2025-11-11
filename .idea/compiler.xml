@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="notepad" />
         <module name="MySpringWebHelloWorld" />
         <module name="MySpringConsoleHelloWorld" />
       </profile>
@@ -15,6 +16,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="MySpringConsoleHelloWorld" options="-parameters" />
       <module name="MySpringWebHelloWorld" options="-parameters" />
+      <module name="notepad" options="-parameters" />
     </option>
   </component>
 </project>

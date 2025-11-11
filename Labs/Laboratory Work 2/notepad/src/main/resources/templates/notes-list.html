@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Мій нотатник</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #0d6efd; /* Синій колір Spring */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f3f5;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .action-links a {
+            text-decoration: none;
+            color: #0d6efd;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+        .action-links a:hover {
+            text-decoration: underline;
+        }
+        .action-links a.delete {
+            color: #dc3545; /* Червоний */
+        }
+        .create-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #0d6efd;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        .create-link:hover {
+            background-color: #0b5ed7;
+        }
+        footer {
+            margin-top: 2em;
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Нотатки</h1>
+    <a href="/new" class="create-link">Створити нову нотатку</a>
+
+    <div th:if="${notes.isEmpty()}">
+        <p>Немає жодної нотатки.</p>
+    </div>
+
+    <table th:unless="${notes.isEmpty()}">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Заголовок</th>
+            <th>Востаннє змінено</th>
+            <th>Дії</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="note : ${notes}">
+            <td th:text="${note.id}">1</td>
+            <td th:text="${note.title}">Заголовок</td>
+            <td th:text="${note.updatedAt != null} ? ${#temporals.format(note.updatedAt, 'dd.MM.yyyy HH:mm')} : 'N/A'">Дата</td>
+            <td class="action-links">
+                <a th:href="@{/edit/{id}(id=${note.id})}">Редагувати</a>
+                <a th:href="@{/delete/{id}(id=${note.id})}" class="delete">Видалити</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <footer>
+        <p>&copy; 2025 Spring Team</p>
+    </footer>
+</div>
+
+</body>
+</html>
